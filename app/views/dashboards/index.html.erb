@@ -1,0 +1,35 @@
+<html>
+<head>
+	<title></title>
+  
+</head>
+<body>
+
+<h1> Dashboard </h1>
+
+<table class="table table-striped">
+ <tr>
+    <th>Title</th>
+    <th class="hidden-phone">Description</th>
+    <th>Topic</th>
+    <th>¿Subir?</th>
+  </tr>
+<% @notas.each do |n| %>
+  
+  <tr>   
+  <%= div_for n do%>
+  <td>  <%= n.title %> </td> 
+  <td> <%= n.description %></td> 
+	<td id="tematica"><%= n.topic %></td>
+	<td> <%= link_to "Si", dashboard_path(n), :method => :put, :remote => true, class: "btn btn-success" %></td> <br/>
+  <% end %>
+<%end%>
+  </tr>
+ </table>
+
+
+
+<!--<td>  n.publico </td> -->  
+
+</body>
+</html>

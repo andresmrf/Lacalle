@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lacalle</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	
+<div id="user_nav">
+  <% if user_signed_in? %>
+    Signed in as <%= current_user.email %>. Not you?
+    <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+  <% else %>
+     <%= link_to "Sign in", new_user_session_path, html_options = {class: "btn"} %>
+  <% end %>
+</div>
+ 
+<div class="container-fluid">
+<%= yield %>
+</div>
+</body>
+</html>

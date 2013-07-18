@@ -1,0 +1,48 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+	<h1> Bienvenidos </h1>
+    
+    <div class="row-fluid">
+    <section>
+    <h2>Recientes</h2>
+    <%= link_to "Recientes", 'publicos/recientes', html_options={class: "btn btn-info"} %>
+    </section>
+    
+    <section>
+    <h2>Antiguos</h2>
+    <%= link_to "Antiguos", 'publicos/antiguos', html_options={class: "btn btn-info"} %>
+    </section>
+
+    <section>
+    <h2>Temática</h2>
+    <%= form_tag({:controller => "publicos", :action => "tematica"}, :method => :get) do %>
+    <%= select_tag("tematica", options_for_select([['Tipo A', "A"], ['Tipo B', "B"], ['Tipo C', "C"] ]) )%><br/>
+    <%= submit_tag "Ver tematica", class: "btn btn-info btntematica" %>
+    <% end %>
+    </section>
+    </div>
+
+<table class="table table-striped">
+ <tr>
+    <th>Title</th>
+    <th class="hidden-phone">Description</th>
+    <th>Topic</th>
+    
+    
+  </tr>
+<% @notas.each do |n| %>
+  <tr>
+    <td><%= n.title %></td> 
+	<td class="hidden-phone"> <%= n.description %></td> 
+	<td id="tematica"><%= n.topic %></td> <br/>
+	<!--<td> <%= n.publico %></td> -->  
+    <% end %>
+  </tr>
+ </table>
+
+</body>
+</html>

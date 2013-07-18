@@ -1,0 +1,30 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<h1>Antiguos</h1>
+
+<table class="table table-striped">
+
+ <tr>
+    <th>Title</th>
+    <th class="hidden-phone">Description</th>
+    <th>Topic</th>
+    
+    
+  </tr>
+<% @antiguos.each do |n| %>
+  <tr>
+    <td><%= n.title %></td> 
+	<td class="hidden-phone"> <%= n.description %></td> 
+	<td><%= n.topic %></td>
+	 
+  <% end %>
+  
+  </tr>
+ </table>
+
+
+</body>
+</html>
