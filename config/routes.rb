@@ -5,9 +5,9 @@ Lacalle::Application.routes.draw do
 
   resources :dashboards
 
-  get 'publicos/tematica' => 'publicos#tematica'
-  get 'publicos/recientes' => 'publicos#recientes'
-  get 'publicos/antiguos' => 'publicos#antiguos'
+  get 'publicos/tematica' 
+  get 'publicos/recientes' 
+  get 'publicos/antiguos' 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

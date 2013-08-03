@@ -9,17 +9,17 @@
     <div class="row-fluid">
     <section>
     <h2>Recientes</h2>
-    <%= link_to "Recientes", 'publicos/recientes', html_options={class: "btn btn-info"} %>
+    <%= link_to "Recientes", publicos_recientes_path, html_options={class: "btn btn-info"} %>
     </section>
     
     <section>
     <h2>Antiguos</h2>
-    <%= link_to "Antiguos", 'publicos/antiguos', html_options={class: "btn btn-info"} %>
+    <%= link_to "Antiguos", publicos_antiguos_path, html_options={class: "btn btn-info"} %>
     </section>
 
     <section>
     <h2>Temática</h2>
-    <%= form_tag({:controller => "publicos", :action => "tematica"}, :method => :get) do %>
+    <%= form_tag("publicos/tematica", :method => :get) do %>
     <%= select_tag("tematica", options_for_select([['Tipo A', "A"], ['Tipo B', "B"], ['Tipo C', "C"] ]) )%><br/>
     <%= submit_tag "Ver tematica", class: "btn btn-info btntematica" %>
     <% end %>

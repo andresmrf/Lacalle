@@ -3,7 +3,7 @@ before_action :authenticate_user!
 	
 	def index
      @notas = Note.where(publico: false)
-
+     fresh_when(@notas)
         
     end
     
